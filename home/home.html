@@ -1,0 +1,39 @@
+<!-- <h1>Hello {{$ctrl.name}}!</h1>
+<p>
+  Start editing <b>home/home.html</b> :)
+</p> -->
+
+<input type="text" ng-model="searchText"></input>
+<button ng-click="searchByName()">Search By Name</button>
+<br>
+<h3 ng-if="searched">Search results:</h3>
+<table ng-if="searched">
+<tr>
+  <th>Name</th>
+  <th>Desc</th>
+  <th>Author</th>
+</tr>
+<tr ng-repeat="book in result">
+  <td>{{book.name}}</td>
+  <td>{{book.desc}}</td>
+  <td>{{book.author}}</td>
+</tr>
+
+<button ng-click="goTo()">Add a book</button>
+
+</table>
+<h3 ng-hide="searched">All Books</h3>
+<table ng-hide="searched">
+<tr>
+  <th>Name</th>
+  <th>Desc</th>
+  <th>Author</th>
+</tr>
+<tr ng-repeat="book in books">
+  <td>{{book.name}}</td>
+  <td>{{book.desc}}</td>
+  <td>{{book.author}}</td>
+</tr>
+
+</table>
+
